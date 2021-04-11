@@ -2,6 +2,8 @@
 pickles/
 .tokens.json
 sqlite.db
+out/
+recaps/
 
 # Editors
 .vscode/

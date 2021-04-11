@@ -1,3 +1,8 @@
+imgkit==1.2.2
+jinja2==2.11.3
+kaleido==0.2.1
 pandas==1.2.3
+plotly==4.14.3
+psutil==5.8.0
 requests==2.25.1
 yfantasy-api==0.0.3

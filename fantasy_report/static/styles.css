@@ -1,0 +1,107 @@
+.report {
+    width: 1205px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.power-rankings {
+    width: 1200px;
+    border-collapse: collapse;
+}
+
+tr {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+td {
+    width: 25%;
+}
+
+tr.top {
+    border-top: 2px solid black;
+    height: 50px;
+    color: white;
+	-webkit-text-stroke: 2px black;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+td.team-name {
+    font-size: xx-large;
+    text-align: left;
+    padding-left: 10px;
+}
+
+td.top-player {
+    width: 32%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+td.bottom-stats {
+    width: 23%;
+}
+
+td.recap {
+    text-align: left;
+    padding-left: 5px;
+    height: 50px;
+}
+
+tr.middle {
+    font-style: italic;
+}
+
+tr.bottom {
+    border-bottom: 2px solid black;
+    height: 25px;    
+}
+
+.team-1 {
+    background-color: #2E91E5;
+}
+
+.team-2 {
+    background-color: #E15F99;
+}
+
+.team-3 {
+    background-color: #1CA71C;
+}
+
+.team-4 {
+    background-color: #FB0D0D;
+}
+
+.team-5 {
+    background-color: #DA16FF;
+}
+
+.team-6 {
+    background-color: #222A2A;
+}
+
+.team-7 {
+    background-color: #B68100;
+}
+
+.team-8 {
+    background-color: #750D86;
+}
+
+.team-9 {
+    background-color: #EB663B;
+}
+
+.team-10 {
+    background-color: #511CFB;
+}
+
+.team-11 {
+    background-color: #00A08B;
+}
+
+.team-12 {
+    background-color: #FB00D1;
+}
