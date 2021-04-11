@@ -1,6 +1,7 @@
 # Custom
 pickles/
 .tokens.json
+sqlite.db
 
 # Editors
 .vscode/
