@@ -1,9 +1,6 @@
 # Custom
-pickles/
 .tokens.json
-sqlite.db
-out/
-recaps/
+fantasy_report.db
 
 # Editors
 .vscode/
