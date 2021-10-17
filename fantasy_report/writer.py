@@ -30,7 +30,7 @@ class Writer:
         if week == 0:
             return "index.html"
         url = f"week-{week}-recap.html"
-        if os.path.isfile(f"recaps/{url}"):
+        if os.path.isfile(f"docs/{url}"):
             return url
 
     def __load_recaps(self, week):
@@ -48,14 +48,14 @@ class Writer:
         template = self.__load_template("nfl_report.html")
         values = self.__build_template_values(int(week))
 
-        with open(f"recaps/week-{week}-recap.html", "w") as f:
+        with open(f"docs/week-{week}-recap.html", "w") as f:
             f.write(template.render(**values))
 
     def update_index(self, week):
         template = self.__load_template("index.html")
         weeks = [(w, num2words(w).title()) for w in range(1, week + 1)]
 
-        with open(f"recaps/index.html", "w") as f:
+        with open(f"docs/index.html", "w") as f:
             f.write(template.render(weeks=weeks))
 
 
