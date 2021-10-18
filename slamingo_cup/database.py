@@ -11,17 +11,17 @@ from models import (
 
 class Database:
     def __init__(self):
-        self.__conn = sqlite3.connect("fantasy_report.db")
+        self.__conn = sqlite3.connect("slamingo_cup.db")
         self.__init_db()
 
     def __execute(self, sql_statement_name, values):
-        with open(f"fantasy_report/sql/{sql_statement_name}.sql", "r") as f:
+        with open(f"slamingo_cup/sql/{sql_statement_name}.sql", "r") as f:
             cursor = self.__conn.cursor()
             cursor.execute(f.read(), values)
             return cursor.fetchall()
 
     def __init_db(self):
-        with open(f"fantasy_report/sql/init.sql", "r") as f:
+        with open(f"slamingo_cup/sql/init.sql", "r") as f:
             for sql_statement in f.read().split(";"):
                 self.__conn.cursor().execute(sql_statement)
 
