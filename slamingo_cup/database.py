@@ -18,6 +18,7 @@ class Database:
         with open(f"slamingo_cup/sql/{sql_statement_name}.sql", "r") as f:
             cursor = self.__conn.cursor()
             cursor.execute(f.read(), values)
+            self.__conn.commit()
             return cursor.fetchall()
 
     def __init_db(self):

@@ -41,7 +41,7 @@ SELECT * FROM (
     LIMIT 1
 ) UNION ALL
 SELECT * FROM (
-    SELECT t.name, t.image_url, NULL, NULL, NULL, (wr.pf / wr.ppf * 100), "Lowest Scorer"
+    SELECT t.name, t.image_url, NULL, NULL, NULL, (wr.pf / wr.ppf * 100), "Underacheiving Team"
     FROM weekly_results wr
     JOIN teams t on t.id = wr.team_id
     WHERE wr.week = :week
