@@ -54,7 +54,7 @@ SELECT * FROM (
     JOIN teams t ON t.id = wr.team_id
     JOIN optimal_points op ON op.team_id = wr.team_id AND op.week = wr.week
     WHERE wr.week = :week
-    ORDER BY (wr.pf / op.points * 100) DESC
+    ORDER BY (wr.pf / op.points * 100) DESC, wr.pf DESC
     LIMIT 1
 ) UNION ALL
 SELECT * FROM (
