@@ -2,4 +2,4 @@ black==21.9b0
 Jinja2==3.0.2
 num2words==0.5.10
 pycodestyle==2.8.0
-yfantasy-api==0.0.3
+yfantasy-api==0.0.4
