@@ -25,20 +25,22 @@ CREATE TABLE IF NOT EXISTS all_play (
 CREATE TABLE IF NOT EXISTS optimal_points (
     team_id integer,
     week integer,
+    date text,
     points real,
-    PRIMARY KEY (team_id, week)
+    PRIMARY KEY (team_id, date)
 );
 
 CREATE TABLE IF NOT EXISTS players (
     id integer,
     team_id integer,
+    date text,
     week integer,
     name text,
     image_url text,
     positions text,
     points real,
     started boolean,
-    PRIMARY KEY (id, team_id, week)
+    PRIMARY KEY (id, team_id, date)
 );
 
 CREATE TABLE IF NOT EXISTS matchups (

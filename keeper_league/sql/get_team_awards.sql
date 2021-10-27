@@ -52,7 +52,8 @@ SELECT * FROM (
     SELECT t.name, t.image_url, NULL, NULL, NULL, (wr.pf / op.points * 100), "Best Coach"
     FROM weekly_results wr
     JOIN teams t ON t.id = wr.team_id
-    JOIN optimal_points op ON op.team_id = wr.team_id AND op.week = wr.week
+    JOIN (SELECT team_id, week, sum(points) as points FROM optimal_points GROUP BY team_id, week) as op
+        ON op.team_id = wr.team_id AND op.week = wr.week
     WHERE wr.week = :week
     ORDER BY (wr.pf / op.points * 100) DESC, wr.pf DESC
     LIMIT 1
@@ -61,7 +62,8 @@ SELECT * FROM (
     SELECT t.name, t.image_url, NULL, NULL, NULL, (wr.pf / op.points * 100), "Worst Coach"
     FROM weekly_results wr
     JOIN teams t ON t.id = wr.team_id
-    JOIN optimal_points op ON op.team_id = wr.team_id AND op.week = wr.week
+    JOIN (SELECT team_id, week, sum(points) as points FROM optimal_points GROUP BY team_id, week) as op
+        ON op.team_id = wr.team_id AND op.week = wr.week
     WHERE wr.week = :week
     ORDER BY (wr.pf / op.points * 100)
     LIMIT 1

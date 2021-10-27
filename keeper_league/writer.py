@@ -34,12 +34,12 @@ class Writer:
             return url
 
     def __load_recaps(self, week):
-        with open(f"slamingo_cup/recaps/week-{week}-recap.json", "r") as f:
+        with open(f"keeper_league/recaps/week-{week}-recap.json", "r") as f:
             return json.load(f)
 
     def __load_template(self, template_name):
         env = Environment(
-            loader=PackageLoader("slamingo_cup", "templates"),
+            loader=PackageLoader("keeper_league", "templates"),
             autoescape=select_autoescape(["html", "xml"]),
         )
         return env.get_template(template_name)
