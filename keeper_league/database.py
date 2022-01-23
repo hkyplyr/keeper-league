@@ -27,14 +27,18 @@ class Database:
                 self.__conn.cursor().execute(sql_statement)
 
     def get_last_updated_week(self):
-        return int(self.__execute('get_last_updated_week')[0][0])
+        return int(self.__execute("get_last_updated_week")[0][0])
 
     def get_player_awards(self, week):
-        return [PlayerAwards(row) for row in self.__execute("get_player_awards", {"week": week})]
+        return [
+            PlayerAwards(row)
+            for row in self.__execute("get_player_awards", {"week": week})
+        ]
 
     def get_power_rankings(self, week):
         previous_ranks = {
-            row[1]: row[0] for row in self.__execute("get_power_rankings", {"week": week - 1})
+            row[1]: row[0]
+            for row in self.__execute("get_power_rankings", {"week": week - 1})
         }
         return [
             PowerRankingsTeam(row, previous_ranks)
@@ -45,14 +49,20 @@ class Database:
         return self.__execute("get_rolling_points_for", {"week": week})
 
     def get_standings(self, week):
-        return [StandingsTeam(row) for row in self.__execute("get_standings", {"week": week})]
+        return [
+            StandingsTeam(row)
+            for row in self.__execute("get_standings", {"week": week})
+        ]
 
     def get_team_awards(self, week):
-        return [TeamAwards(row) for row in self.__execute("get_team_awards", {"week": week})]
+        return [
+            TeamAwards(row) for row in self.__execute("get_team_awards", {"week": week})
+        ]
 
     def get_weekly_results(self, week):
         return [
-            WeeklyResultsTeam(row) for row in self.__execute("get_weekly_results", {"week": week})
+            WeeklyResultsTeam(row)
+            for row in self.__execute("get_weekly_results", {"week": week})
         ]
 
     def insert_matchup(self, matchup):

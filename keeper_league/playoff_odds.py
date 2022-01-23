@@ -5,11 +5,14 @@ import math
 import random
 import copy
 
-fantasy_api = YahooFantasyApi(87025, "nfl")
+fantasy_api = YahooFantasyApi(4774, "nhl")
 db = Database()
 
+current_week = 14
+last_week = 22
+
 points_for = {}
-for week in range(1, 11):
+for week in range(1, current_week):
     for result in db.get_rolling_points_for(week):
         if result[0] not in points_for:
             points_for[result[0]] = {"pf": []}
@@ -19,21 +22,21 @@ for value in points_for.values():
     value["std"] = stdev(value["pf"][1:])
 
 standings = {}
-for team in db.get_standings(5):
+for team in db.get_standings(current_week):
     team_data = {"w": team.wins, "l": team.losses, "pf": team.raw_pf}
     standings[team.name] = team_data
 
 remaining_matchups = []
-for week in range(1, 14 + 1):
+for week in range(current_week, last_week + 1):
     matchups = fantasy_api.league().scoreboard(week=week).get().matchups
     for m in matchups:
         if m.status == "postevent":
             continue
-        team_one_info = m.teams[0].team.info
-        team_two_info = m.teams[1].team.info
+        team_one = m.teams[0]
+        team_two = m.teams[1]
         matchup = {
-            "team_one": {"id": team_one_info.team_id, "name": team_one_info.name},
-            "team_two": {"id": team_two_info.team_id, "name": team_two_info.name},
+            "team_one": {"id": team_one.id, "name": team_one.name},
+            "team_two": {"id": team_two.id, "name": team_two.name},
         }
         remaining_matchups.append(matchup)
 
@@ -68,10 +71,12 @@ def simulate_season(team_variables, standings, matchups):
         team_one = matchup["team_one"]["name"]
         team_two = matchup["team_two"]["name"]
         team_one_pf = (
-            team_variables[team_one]["avg"] + random_bm() * team_variables[team_one]["std"]
+            team_variables[team_one]["avg"]
+            + random_bm() * team_variables[team_one]["std"]
         )
         team_two_pf = (
-            team_variables[team_two]["avg"] + random_bm() * team_variables[team_two]["std"]
+            team_variables[team_two]["avg"]
+            + random_bm() * team_variables[team_two]["std"]
         )
 
         final_standings[team_one]["pf"] += team_one_pf
@@ -83,7 +88,9 @@ def simulate_season(team_variables, standings, matchups):
             final_standings[team_one]["l"] += 1
             final_standings[team_two]["w"] += 1
     final_standings = dict(
-        sorted(final_standings.items(), key=lambda x: (x[1]["w"], x[1]["pf"]), reverse=True)
+        sorted(
+            final_standings.items(), key=lambda x: (x[1]["w"], x[1]["pf"]), reverse=True
+        )
     )
 
     final_standings_prob = {}
@@ -97,12 +104,12 @@ for team, result in monte_carlo(points_for, standings, remaining_matchups).items
     if headers:
         print(headers)
         headers = None
-    first = round(result[0], 1)
-    second = round(result[1], 1)
-    third = round(result[2], 1)
-    fourth = round(result[3], 1)
-    fifth = round(result[4], 1)
-    sixth = round(result[5], 1)
+    # first = round(result[0], 1)
+    # second = round(result[1], 1)
+    # third = round(result[2], 1)
+    # fourth = round(result[3], 1)
+    # fifth = round(result[4], 1)
+    # sixth = round(result[5], 1)
 
     have_bye = round(sum(result[:2]), 1)
     make_playoffs = round(sum(result[:6]), 1)

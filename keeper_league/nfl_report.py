@@ -18,11 +18,7 @@ def get_sorted_players(api, team_id, week, day):
                 "date": day,
                 "name": player.name,
                 "image_url": player.image_url,
-                "positions": ",".join(
-                    [
-                        pos for pos in player.eligible_positions
-                    ]
-                ),
+                "positions": ",".join([pos for pos in player.eligible_positions]),
                 "points": player.points,
                 "started": player.selected_position not in ["BN", "IR"],
             }
@@ -35,7 +31,9 @@ def get_sorted_players(api, team_id, week, day):
 
 def get_optimal_position(players, position, number_of_spots, used):
     players = filter(lambda player: player.id not in used, players)
-    players = list(filter(lambda player: position in player.eligible_positions, players))
+    players = list(
+        filter(lambda player: position in player.eligible_positions, players)
+    )
 
     return [float(player.points) for player in players[:number_of_spots]], used + [
         player.id for player in players[:number_of_spots]
@@ -96,8 +94,8 @@ api = YahooFantasyApi(4774, "nhl")
 
 
 def daterange(start, end):
-    start = datetime.strptime(start, '%Y-%m-%d')
-    end = datetime.strptime(end, '%Y-%m-%d')
+    start = datetime.strptime(start, "%Y-%m-%d")
+    end = datetime.strptime(end, "%Y-%m-%d")
     num_of_days = (end - start).days + 1
     for d in range(num_of_days):
         yield (start + timedelta(d)).date()
@@ -105,10 +103,7 @@ def daterange(start, end):
 
 def get_game_ranges():
     game_weeks = api.game().game_weeks().get().game_weeks
-    return {
-        int(gw.week): daterange(gw.start, gw.end)
-        for gw in game_weeks
-    }
+    return {int(gw.week): daterange(gw.start, gw.end) for gw in game_weeks}
 
 
 game_ranges = get_game_ranges()
@@ -134,7 +129,9 @@ for i in range(db.get_last_updated_week(), week + 1):
             }
         )
 
-        proj_points_perc = matchup.winning_team.points / matchup.winning_team.projected_points
+        proj_points_perc = (
+            matchup.winning_team.points / matchup.winning_team.projected_points
+        )
         db.insert_weekly_results(
             {
                 "team_id": matchup.winning_team.id,
@@ -146,7 +143,9 @@ for i in range(db.get_last_updated_week(), week + 1):
             }
         )
 
-        proj_points_perc = matchup.losing_team.points / matchup.losing_team.projected_points
+        proj_points_perc = (
+            matchup.losing_team.points / matchup.losing_team.projected_points
+        )
         db.insert_weekly_results(
             {
                 "team_id": matchup.losing_team.id,
@@ -171,7 +170,7 @@ for i in range(db.get_last_updated_week(), week + 1):
     teams = api.league().teams().get().teams
     for day in game_ranges.get(i):
         for team in teams:
-            print(f'Getting players for {team.name} on {day}')
+            print(f"Getting players for {team.name} on {day}")
             players = get_sorted_players(api, team.id, i, day)
             g, used = get_optimal_position(players, "G", 2, [])
             d, used = get_optimal_position(players, "D", 4, used)
