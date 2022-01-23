@@ -91,7 +91,7 @@ def get_rw_lw_c(players, used):
 
 
 teams = {}
-week = 2
+week = 14
 api = YahooFantasyApi(4774, "nhl")
 
 
@@ -114,7 +114,7 @@ def get_game_ranges():
 game_ranges = get_game_ranges()
 
 
-for i in range(1, week + 1):
+for i in range(db.get_last_updated_week(), week + 1):
     matchups = api.league().scoreboard(week=i).get().matchups
 
     for matchup in matchups:
