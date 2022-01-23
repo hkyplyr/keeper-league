@@ -91,7 +91,7 @@ def get_rw_lw_c(players, used):
 
 
 teams = {}
-week = 5
+week = 14
 api = YahooFantasyApi(4774, "nhl")
 
 
