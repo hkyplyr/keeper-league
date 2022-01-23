@@ -17,8 +17,10 @@ def __added_pick(pick, original_team):
 def __calculate_draft_cost(player, draft_results):
     return max(0, draft_results.get(player.name, 16) - 2)
 
+
 def __flatten(list_of_tuples):
     return [item for sublist in list_of_tuples for item in sublist]
+
 
 def __format_pick(pick_round, original_team=None):
     return (__pick_name(pick_round, original_team), pick_round)
@@ -101,9 +103,7 @@ def get_players_by_team():
 
 def __combine_lists(data):
     combined = itertools.zip_longest(*data.values(), fillvalue=(None, None))
-    return [
-        __flatten(combined_list) for combined_list in combined
-    ]
+    return [__flatten(combined_list) for combined_list in combined]
 
 
 def main():
