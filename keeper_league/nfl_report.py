@@ -10,6 +10,7 @@ def get_sorted_players(api, team_id, week, day):
     players = api.team(team_id).roster(date=day).stats().get().players
 
     for player in players:
+        played = list(player.stats.values())[0] is not None
         db.insert_player(
             {
                 "id": player.id,
@@ -20,7 +21,7 @@ def get_sorted_players(api, team_id, week, day):
                 "image_url": player.image_url,
                 "positions": ",".join([pos for pos in player.eligible_positions]),
                 "points": player.points,
-                "started": player.selected_position not in ["BN", "IR"],
+                "started": played and player.selected_position not in ["BN", "IR", "IR+"],
             }
         )
 
@@ -89,8 +90,8 @@ def get_rw_lw_c(players, used):
 
 
 teams = {}
-week = 14
-api = YahooFantasyApi(4774, "nhl")
+week = 1
+api = YahooFantasyApi(6738, "nhl")
 
 
 def daterange(start, end):
@@ -107,7 +108,6 @@ def get_game_ranges():
 
 
 game_ranges = get_game_ranges()
-
 
 for i in range(db.get_last_updated_week(), week + 1):
     matchups = api.league().scoreboard(week=i).get().matchups

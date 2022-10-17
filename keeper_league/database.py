@@ -27,7 +27,11 @@ class Database:
                 self.__conn.cursor().execute(sql_statement)
 
     def get_last_updated_week(self):
-        return int(self.__execute("get_last_updated_week")[0][0])
+        result = self.__execute("get_last_updated_week")[0][0]
+        if result:
+            return int(result)
+        else:
+            return 1
 
     def get_player_awards(self, week):
         return [
