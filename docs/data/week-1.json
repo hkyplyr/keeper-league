@@ -300,8 +300,8 @@
     "allStarTeam": [
         {   
             "position": "C",
-            "player_image": "https:/s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11042021/6743.png",
-            "team_image": "https:/s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11042021/6743.png",
+            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Connor McDavid",
             "points": "25.20",
             "avg_points": "12.6",
