@@ -1,5 +1,17 @@
 async function initialLoad() {
-    loadPage(1);
+    var week = get_week(2);
+    loadPage(week);
+}
+
+function get_week(defaultWeek) {
+    const urlParams = new URLSearchParams(window.location.search);
+    var week = parseInt(urlParams.get('week') || defaultWeek)
+
+    if (week > defaultWeek) {
+        return defaultWeek;
+    } else {
+        return week;
+    }
 }
 
 async function loadPage(week) {
@@ -189,7 +201,17 @@ async function updatePowerRankings(week) {
     
             var movementContainer = document.createElement("div");
             movementContainer.classList.add("flex-col", "w-1/6", "text-center")
-            movementContainer.append("-");
+
+            var movement = "-"
+            if (row.movement < 0) {
+                movement = "▼"
+            } else if (row.movement > 0) {
+                movement = "▲"
+            } else {
+                movement = "—"
+            }
+
+            movementContainer.append(movement);
 
             var bottomContainer = document.createElement("div");
             bottomContainer.classList.add("bg-white", "rounded-b-md", "border", "border-black", "border-t-0", "p-1")
