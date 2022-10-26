@@ -197,7 +197,7 @@ async function updatePowerRankings(week) {
     
             var resultContainer = document.createElement("div");
             resultContainer.classList.add("flex-col", "w-1/2", "text-center")
-            resultContainer.append(`${row.result} - ${row.pointsFor}`);
+            resultContainer.append(`${row.result} - ${row.points}`);
     
             var movementContainer = document.createElement("div");
             movementContainer.classList.add("flex-col", "w-1/6", "text-center")
@@ -221,19 +221,19 @@ async function updatePowerRankings(week) {
     
             var topPlayerContainer = document.createElement("div");
             topPlayerContainer.classList.add("text-left", "w-1/4")
-            topPlayerContainer.append(`Top Player: ${row.topPlayer}`);
+            topPlayerContainer.append(`Top Player: ${row.top_player}`);
     
             var weeklyCoachContainer = document.createElement("div");
             weeklyCoachContainer.classList.add("text-center", "w-1/4")
-            weeklyCoachContainer.append(`Weekly Coach Rating: ${row.weeklyCoachPercentage}`);
+            weeklyCoachContainer.append(`Weekly Coach Rating: ${row.weekly_coach_percentage}%`);
     
             var totalPointsContainer = document.createElement("div");
             totalPointsContainer.classList.add("text-center", "w-1/4")
-            totalPointsContainer.append(`Total PF: ${row.totalPointsFor}`);
+            totalPointsContainer.append(`Total PF: ${row.total_points}`);
     
             var yearlyCoachContainer = document.createElement("div");
             yearlyCoachContainer.classList.add("text-right", "w-1/4")
-            yearlyCoachContainer.append(`Yearly Coach Rating: ${row.yearlyCoachPercentage}`);
+            yearlyCoachContainer.append(`Yearly Coach Rating: ${row.yearly_coach_percentage}%`);
 
             var writeup = document.createElement("div");
             writeup.append(row.writeup);
@@ -282,7 +282,9 @@ function buildCell(content, classList = "") {
 }
 
 async function addStandingRow(row, tbody) {
-    var team = buildCell(row.team, "text-left");
+    var teamName = `${row.rank}. ${row.team}`
+
+    var team = buildCell(teamName, "text-left");
     var record = buildCell(row.record);
     var all_play = buildCell(row.all_play);
     var pf = buildCell(row.points_for);
