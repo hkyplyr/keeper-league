@@ -1,93 +1,74 @@
-class PlayerAwards:
-    def __init__(self, row):
-        self.player_name = row[0]
-        self.player_image = row[1]
-        self.points = format_points(row[2])
-        self.team_name = row[3]
-        self.team_image = row[4]
-        self.award_name = row[5]
-
-    def __repr__(self):
-        return str({k: v for k, v in self.__dict__.items() if "image" not in k})
+from sqlalchemy import create_engine
+from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String
+from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import Session
 
 
-class PowerRankingsTeam:
-    def __init__(self, row, previous_ranks):
-        self.rank = row[0]
-        self.name = row[1]
-        self.movement = self.__get_rank_movement(previous_ranks)
-        self.record = format_record(row[2], row[3])
-        self.pf = format_points(row[4])
-        self.coach = format_percentage(row[5])
-
-    def __get_rank_movement(self, previous_ranks):
-        previous_rank = previous_ranks.get(self.name)
-        if not previous_rank:
-            return 0
-        return previous_rank - self.rank
-
-    def __repr__(self):
-        return str(self.__dict__)
+Base = declarative_base()
 
 
-class StandingsTeam:
-    def __init__(self, row):
-        self.rank = row[0]
-        self.name = row[1]
-        self.wins = row[2]
-        self.losses = row[3]
-        self.record = format_record(row[2], row[3])
-        self.raw_pf = row[4]
-        self.pf = format_points(row[4])
-        self.luck = format_percentage(row[5])
+class Team(Base):
+    __tablename__ = "teams"
 
-    def __repr__(self):
-        return str(self.__dict__)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+    image_url = Column(String(255))
 
 
-class TeamAwards:
-    def __init__(self, row):
-        self.team_one_name = row[0]
-        self.team_one_image = row[1]
-        self.team_two_name = row[2]
-        self.team_two_image = row[3]
-        self.points = format_points(row[4])
-        self.percentage = format_percentage(row[5])
-        self.award_name = row[6]
+class Player(Base):
+    __tablename__ = "players"
 
-    def __repr__(self):
-        return str({k: v for k, v in self.__dict__.items() if "image" not in k})
-
-
-class WeeklyResultsTeam:
-    def __init__(self, row):
-        self.rank = row[0]
-        self.name = row[1]
-        self.result = "W" if row[2] else "L"
-        self.pf = format_points(row[3])
-        self.opf = format_points(row[4])
-        self.coach = format_percentage(row[5])
-
-    def __repr__(self):
-        return str(self.__dict__)
+    id = Column(Integer, primary_key=True)
+    team_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    date = Column(String(255), primary_key=True)
+    week = Column(Integer)
+    name = Column(String(255))
+    image_url = Column(String(255))
+    positions = Column(String(255))
+    points = Column(Float)
+    started = Column(Boolean)
 
 
-def format_percentage(percentage):
-    if not percentage:
-        return percentage
+class WeeklyResult(Base):
+    __tablename__ = "weekly_results"
 
-    formatted_percentage = "{:.1f}".format(percentage)
-    if formatted_percentage == "100.0":
-        return "100"
-    return f"{formatted_percentage}"
+    team_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    week = Column(Integer, primary_key=True)
+    winner = Column(Boolean)
+    points_for = Column(Float)
+    projected_points_for = Column(Float)
 
-
-def format_points(points):
-    if not points:
-        return points
-
-    return "{:.2f}".format(points)
+    team = relationship("Team")
 
 
-def format_record(wins, losses):
-    return f"({wins}-{losses})"
+class AllPlay(Base):
+    __tablename__ = "all_play"
+
+    team_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    week = Column(Integer, primary_key=True)
+    wins = Column(Integer)
+    losses = Column(Integer)
+
+
+class OptimalPoints(Base):
+    __tablename__ = "optimal_points"
+
+    team_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    week = Column(Integer)
+    date = Column(String(255), primary_key=True)
+    points = Column(Float)
+
+
+class Matchup(Base):
+    __tablename__ = "matchups"
+
+    winner_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    loser_id = Column(Integer, ForeignKey("teams.id"), primary_key=True)
+    week = Column(Integer, primary_key=True)
+    victory_margin = Column(Float)
+
+
+def db_session():
+    engine = create_engine("sqlite:///keeper_league.db", future=True)
+    Base.metadata.create_all(engine)
+    return Session(engine)

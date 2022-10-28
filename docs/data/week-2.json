@@ -56,8 +56,8 @@
             "record": "(1-1)",
             "all_play": "(10-12)",
             "points_for": "362.35",
-            "optimal_points_for": "416.40",
-            "coach_percentage": "87.0",
+            "optimal_points_for": "418.45",
+            "coach_percentage": "86.6",
             "luck_percentage": "4.5"
         },
         {
@@ -184,10 +184,10 @@
             "result": "W",
             "points": "225.85",
             "top_player": "James Reimer (21.40)",
-            "weekly_coach_percentage": "90.7",
+            "weekly_coach_percentage": "90.4",
             "total_points": "362.35",
-            "yearly_coach_percentage": "87.0",
-            "movement": 4,
+            "yearly_coach_percentage": "86.6",
+            "movement": 3,
             "team_id": 1,
             "color": "bg-gray-500",
             "writeup": ""
@@ -257,7 +257,7 @@
             "weekly_coach_percentage": "91.4",
             "total_points": "370.30",
             "yearly_coach_percentage": "91.7",
-            "movement": -2,
+            "movement": -1,
             "team_id": 6,
             "color": "bg-red-500",
             "writeup": ""
@@ -336,7 +336,7 @@
     "allStarTeam": [
         {
             "position": "C",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10272021/6777.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252022/6777.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png",
             "player": "Sebastian Aho",
             "points": "26.80",
@@ -354,7 +354,7 @@
         },
         {
             "position": "RW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11092021/5989.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252022/5989.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Valeri Nichushkin",
             "points": "33.90",
@@ -363,7 +363,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11232021/7899.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/7899.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_12.png",
             "player": "Rasmus Dahlin",
             "points": "24.25",
@@ -372,7 +372,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11092021/4503.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/4503.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png",
             "player": "John Carlson",
             "points": "23.70",
@@ -381,7 +381,7 @@
         },
         {
             "position": "G",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11102021/4369.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10262022/4369.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/0ec81598e9a4aad1879e667b94210be68561816bd292c5a1750436d39e350931.jpg",
             "player": "James Reimer",
             "points": "21.40",
@@ -392,7 +392,7 @@
     "allBustTeam": [
         {
             "position": "C",
-            "player_image": "https://s.yimg.com/dh/ap/default/140828/silhouette@2x.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10262022/8654.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25323121205_f791e0dec2.jpg",
             "player": "Dylan Holloway",
             "points": "0.00",
@@ -428,7 +428,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11082021/4424.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/4424.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_12.png",
             "player": "Alec Martinez",
             "points": "0.75",
@@ -437,7 +437,7 @@
         },
         {
             "position": "G",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11162021/7626.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/7626.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_8.png",
             "player": "Jeremy Swayman",
             "points": "-4.20",

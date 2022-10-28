@@ -1,68 +1,65 @@
 import json
 import os
 import sys
-
-from jinja2 import Environment, PackageLoader, select_autoescape
-from num2words import num2words
-
+from queries import Awards, PowerRankings, Standings, Teams
 from database import Database
 
+colors = {
+    1: "bg-gray-500",
+    2: "bg-green-500",
+    3: "bg-blue-500",
+    4: "bg-violet-500",
+    5: "bg-pink-500",
+    6: "bg-red-500",
+    7: "bg-purple-500",
+    8: "bg-fuchsia-500",
+    9: "bg-indigo-500",
+    10: "bg-yellow-500",
+    11: "bg-orange-500",
+    12: "bg-teal-500",
+}
 
-class Writer:
-    def __init__(self):
-        self.db = Database()
 
-    def __build_template_values(self, week):
-        return {
-            "week": num2words(week).title(),
-            "next_week": num2words(week + 1).title(),
-            "previous_week_url": self.__build_url(week - 1),
-            "next_week_url": self.__build_url(week + 1),
-            "standings": self.db.get_standings(week),
-            "power_rankings": self.db.get_power_rankings(week),
-            "weekly_results": self.db.get_weekly_results(week),
-            "player_awards": self.db.get_player_awards(week),
-            "team_awards": self.db.get_team_awards(week),
-            "recaps": self.__load_recaps(week),
-        }
+def get_and_prepare_power_rankings(week):
+    power_rankings = PowerRankings.get_power_rankings(week)
+    for row in power_rankings:
+        row["color"] = colors[row["team_id"]]
+        row["writeup"] = ""
 
-    def __build_url(self, week):
-        if week == 0:
-            return "index.html"
-        url = f"week-{week}-recap.html"
-        if os.path.isfile(f"docs/{url}"):
-            return url
+    return power_rankings
 
-    def __load_recaps(self, week):
-        with open(f"keeper_league/recaps/week-{week}-recap.json", "r") as f:
-            return json.load(f)
 
-    def __load_template(self, template_name):
-        env = Environment(
-            loader=PackageLoader("keeper_league", "templates"),
-            autoescape=select_autoescape(["html", "xml"]),
-        )
-        return env.get_template(template_name)
+db = Database()
 
-    def write_report(self, week):
-        template = self.__load_template("nfl_report.html")
-        values = self.__build_template_values(int(week))
 
-        with open(f"docs/week-{week}-recap.html", "w") as f:
-            f.write(template.render(**values))
+def get_week():
+    if len(sys.argv) == 1:
+        print("Must provide week")
+        exit()
 
-    def update_index(self, week):
-        template = self.__load_template("index.html")
-        weeks = [(w, num2words(w).title()) for w in range(1, week + 1)]
+    week = int(sys.argv[1])
+    last_updated_week = db.get_last_updated_week()
+    if week <= 0 or week > last_updated_week:
+        print("Provided week is invalid")
+        exit()
 
-        with open(f"docs/index.html", "w") as f:
-            f.write(template.render(weeks=weeks))
+    return week
 
 
 if __name__ == "__main__":
-    writer = Writer()
-    target_week = int(sys.argv[1])
+    week = get_week()
 
-    writer.update_index(target_week)
-    for week in range(1, target_week + 1):
-        writer.write_report(week)
+    filepath = f"docs/data/week-{week}.json"
+    if os.path.exists(filepath):
+        print(f"{filepath} already exists, skipping...")
+    else:
+        data = {
+            "standings": Standings.get_standings(week),
+            "powerRankings": get_and_prepare_power_rankings(week),
+            "awards": Awards.get_awards(week),
+            "allStarTeam": Teams.get_top_players(week),
+            "allBustTeam": Teams.get_bottom_players(week),
+        }
+
+        with open(filepath, "w") as f:
+            json.dump(data, f, indent="    ")

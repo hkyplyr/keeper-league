@@ -96,8 +96,8 @@
             "record": "(0-1)",
             "all_play": "(2-9)",
             "points_for": "136.50",
-            "optimal_points_for": "167.30",
-            "coach_percentage": "81.6",
+            "optimal_points_for": "168.50",
+            "coach_percentage": "81.0",
             "luck_percentage": "-18.2"
         },
         {
@@ -222,6 +222,20 @@
         },
         {
             "rank": 8,
+            "team": "Auston Marner",
+            "result": "L",
+            "points": "136.50",
+            "top_player": "Travis Konecny (18.30)",
+            "weekly_coach_percentage": "81.0",
+            "total_points": "136.50",
+            "yearly_coach_percentage": "81.0",
+            "movement": 0,
+            "team_id": 1,
+            "color": "bg-gray-500",
+            "writeup": ""
+        },
+        {
+            "rank": 9,
             "team": "No Point in Warmup",
             "result": "L",
             "points": "152.30",
@@ -232,20 +246,6 @@
             "movement": 0,
             "team_id": 6,
             "color": "bg-red-500",
-            "writeup": ""
-        },
-        {
-            "rank": 9,
-            "team": "Auston Marner",
-            "result": "L",
-            "points": "136.50",
-            "top_player": "Travis Konecny (18.30)",
-            "weekly_coach_percentage": "81.6",
-            "total_points": "136.50",
-            "yearly_coach_percentage": "81.6",
-            "movement": 0,
-            "team_id": 1,
-            "color": "bg-gray-500",
             "writeup": ""
         },
         {
@@ -345,7 +345,7 @@
         },
         {
             "position": "LW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10292021/4471.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252022/4471.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25323121205_f791e0dec2.jpg",
             "player": "Steven Stamkos",
             "points": "24.80",
@@ -354,7 +354,7 @@
         },
         {
             "position": "RW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11092021/6752.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252022/6752.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25218775992_1baac11d46.jpg",
             "player": "Mikko Rantanen",
             "points": "19.25",
@@ -363,7 +363,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11102021/5769.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/5769.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png",
             "player": "Shayne Gostisbehere",
             "points": "15.40",
@@ -392,7 +392,7 @@
     "allBustTeam": [
         {
             "position": "C",
-            "player_image": "https://s.yimg.com/dh/ap/default/140828/silhouette@2x.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252022/9272.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Shane Wright",
             "points": "0.00",
@@ -401,7 +401,7 @@
         },
         {
             "position": "LW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11092021/4967.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/4967.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25323121205_f791e0dec2.jpg",
             "player": "Jeff Skinner",
             "points": "0.30",
@@ -428,7 +428,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11102021/4972.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10242022/4972.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/30000259449_3b4ab7.jpg",
             "player": "Cam Fowler",
             "points": "0.60",
