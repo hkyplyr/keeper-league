@@ -9,7 +9,8 @@ from models import (
 )
 from yfantasy_api.api import YahooFantasyApi
 from sqlalchemy import func
-from tools import OptimalPoints
+from tools import GetOptimalPoints
+from update_all_play import update_all_play
 
 
 def get_sorted_players(session, api, team_id, week, day):
@@ -123,10 +124,12 @@ for i in inclusive_range(get_last_updated_week(), week):
         for team in teams:
             print(f"Getting players for {team.name} on {day}")
             players = get_sorted_players(session, api, team.id, i, day)
-            optimal_points = OptimalPoints.get_optimal_points(players)
+            optimal_points = GetOptimalPoints.get_optimal_points(players)
 
             session.merge(
                 OptimalPoints(team_id=team.id, week=i, date=day, points=optimal_points)
             )
 
     session.commit()
+
+    update_all_play(i)
