@@ -1,5 +1,5 @@
 async function initialLoad() {
-    var week = get_week(2);
+    var week = get_week(3);
     loadPage(week);
 }
 
@@ -220,7 +220,7 @@ async function updatePowerRankings(week) {
             middle.classList.add("flex", "flex-row", "w-full", "italic", "pb-2");
     
             var topPlayerContainer = document.createElement("div");
-            topPlayerContainer.classList.add("text-left", "w-1/4")
+            topPlayerContainer.classList.add("text-left", "w-1/4", "whitespace-nowrap")
             topPlayerContainer.append(`Top Player: ${row.top_player}`);
     
             var weeklyCoachContainer = document.createElement("div");

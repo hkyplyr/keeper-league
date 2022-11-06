@@ -38,7 +38,7 @@ def get_sorted_players(session, api, team_id, week, day):
     return list(players)
 
 
-week = 2
+week = 3
 api = YahooFantasyApi(6738, "nhl", timeout=2)
 session = db_session()
 
