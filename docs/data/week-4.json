@@ -229,7 +229,7 @@
             "weekly_coach_percentage": "92.8",
             "total_points": "745.25",
             "yearly_coach_percentage": "88.5",
-            "movement": -1,
+            "movement": 3,
             "team_id": 8,
             "color": "bg-fuchsia-500",
             "writeup": ""
@@ -257,7 +257,7 @@
             "weekly_coach_percentage": "95.4",
             "total_points": "749.15",
             "yearly_coach_percentage": "95.2",
-            "movement": 0,
+            "movement": -3,
             "team_id": 7,
             "color": "bg-purple-500",
             "writeup": ""
@@ -271,7 +271,7 @@
             "weekly_coach_percentage": "84.8",
             "total_points": "688.70",
             "yearly_coach_percentage": "92.4",
-            "movement": 0,
+            "movement": -1,
             "team_id": 9,
             "color": "bg-indigo-500",
             "writeup": ""

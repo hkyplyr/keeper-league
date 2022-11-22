@@ -68,10 +68,11 @@ def top_player_subquery():
     )
 
 
-def all_play_subquery():
+def all_play_subquery(week):
     return (
         session.query(AllPlay.team_id, func.sum(AllPlay.wins).label("all_win"))
         .group_by(AllPlay.team_id)
+        .filter(AllPlay.week <= week)
         .subquery()
     )
 
@@ -98,7 +99,7 @@ def __get_power_rankings(week, previous_ranks={}):
     optimal_points = optimal_points_subquery(week)
     season_results = season_results_subquery(week)
     season_optimal_points = season_optimal_points_subquery(week)
-    all_play = all_play_subquery()
+    all_play = all_play_subquery(week)
 
     subquery = (
         session.query(

@@ -222,16 +222,16 @@
         },
         {
             "rank": 8,
-            "team": "Auston Marner",
+            "team": "Suck and Blow",
             "result": "L",
-            "points": "136.50",
-            "top_player": "Travis Konecny (18.30)",
-            "weekly_coach_percentage": "81.0",
-            "total_points": "136.50",
-            "yearly_coach_percentage": "81.0",
+            "points": "155.95",
+            "top_player": "Steven Stamkos (24.80)",
+            "weekly_coach_percentage": "97.5",
+            "total_points": "155.95",
+            "yearly_coach_percentage": "97.5",
             "movement": 0,
-            "team_id": 1,
-            "color": "bg-gray-500",
+            "team_id": 10,
+            "color": "bg-yellow-500",
             "writeup": ""
         },
         {
@@ -250,6 +250,20 @@
         },
         {
             "rank": 10,
+            "team": "Auston Marner",
+            "result": "L",
+            "points": "136.50",
+            "top_player": "Travis Konecny (18.30)",
+            "weekly_coach_percentage": "81.0",
+            "total_points": "136.50",
+            "yearly_coach_percentage": "81.0",
+            "movement": 0,
+            "team_id": 1,
+            "color": "bg-gray-500",
+            "writeup": ""
+        },
+        {
+            "rank": 11,
             "team": "Kyle'sKillerLemonade",
             "result": "L",
             "points": "125.05",
@@ -260,20 +274,6 @@
             "movement": 0,
             "team_id": 8,
             "color": "bg-fuchsia-500",
-            "writeup": ""
-        },
-        {
-            "rank": 11,
-            "team": "Suck and Blow",
-            "result": "L",
-            "points": "155.95",
-            "top_player": "Steven Stamkos (24.80)",
-            "weekly_coach_percentage": "97.5",
-            "total_points": "155.95",
-            "yearly_coach_percentage": "97.5",
-            "movement": 0,
-            "team_id": 10,
-            "color": "bg-yellow-500",
             "writeup": ""
         },
         {
@@ -336,7 +336,7 @@
     "allStarTeam": [
         {
             "position": "C",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11042021/6743.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10262022/6743.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Connor McDavid",
             "points": "25.20",
@@ -372,7 +372,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11292021/6749.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10262022/6749.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Ivan Provorov",
             "points": "15.20",

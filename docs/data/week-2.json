@@ -16,8 +16,8 @@
             "record": "(2-0)",
             "all_play": "(19-3)",
             "points_for": "414.85",
-            "optimal_points_for": "433.55",
-            "coach_percentage": "95.7",
+            "optimal_points_for": "433.85",
+            "coach_percentage": "95.6",
             "luck_percentage": "13.6"
         },
         {
@@ -26,7 +26,7 @@
             "record": "(2-0)",
             "all_play": "(12-10)",
             "points_for": "375.70",
-            "optimal_points_for": "414.20",
+            "optimal_points_for": "414.40",
             "coach_percentage": "90.7",
             "luck_percentage": "45.5"
         },
@@ -56,8 +56,8 @@
             "record": "(1-1)",
             "all_play": "(10-12)",
             "points_for": "362.35",
-            "optimal_points_for": "418.45",
-            "coach_percentage": "86.6",
+            "optimal_points_for": "418.70",
+            "coach_percentage": "86.5",
             "luck_percentage": "4.5"
         },
         {
@@ -141,10 +141,10 @@
             "team": "Slap Shot",
             "result": "W",
             "points": "244.60",
-            "top_player": "Anders Lee (22.95)",
-            "weekly_coach_percentage": "98.0",
+            "top_player": "Anders Lee (23.25)",
+            "weekly_coach_percentage": "97.9",
             "total_points": "414.85",
-            "yearly_coach_percentage": "95.7",
+            "yearly_coach_percentage": "95.6",
             "movement": 1,
             "team_id": 11,
             "color": "bg-orange-500",
@@ -156,7 +156,7 @@
             "result": "W",
             "points": "216.00",
             "top_player": "Brady Tkachuk (30.80)",
-            "weekly_coach_percentage": "91.3",
+            "weekly_coach_percentage": "91.2",
             "total_points": "375.70",
             "yearly_coach_percentage": "90.7",
             "movement": 2,
@@ -184,10 +184,10 @@
             "result": "W",
             "points": "225.85",
             "top_player": "James Reimer (21.40)",
-            "weekly_coach_percentage": "90.4",
+            "weekly_coach_percentage": "90.3",
             "total_points": "362.35",
-            "yearly_coach_percentage": "86.6",
-            "movement": 3,
+            "yearly_coach_percentage": "86.5",
+            "movement": 5,
             "team_id": 1,
             "color": "bg-gray-500",
             "writeup": ""
@@ -215,7 +215,7 @@
             "weekly_coach_percentage": "94.4",
             "total_points": "357.50",
             "yearly_coach_percentage": "88.0",
-            "movement": 3,
+            "movement": 4,
             "team_id": 8,
             "color": "bg-fuchsia-500",
             "writeup": ""
@@ -271,7 +271,7 @@
             "weekly_coach_percentage": "91.0",
             "total_points": "334.25",
             "yearly_coach_percentage": "93.9",
-            "movement": 0,
+            "movement": -3,
             "team_id": 10,
             "color": "bg-yellow-500",
             "writeup": ""
@@ -309,7 +309,7 @@
         },
         {
             "label": "Best Coach",
-            "value": "Slap Shot (98.0%)",
+            "value": "Slap Shot (97.9%)",
             "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/26039217919_d14b76.jpg"
         },
         {
@@ -345,7 +345,7 @@
         },
         {
             "position": "LW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11272019/7902.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10272022/7902.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_12.png",
             "player": "Brady Tkachuk",
             "points": "30.80",
@@ -410,7 +410,7 @@
         },
         {
             "position": "RW",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11092021/8647.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10282022/8647.png",
             "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png",
             "player": "Alexander Holtz",
             "points": "0.25",
@@ -419,7 +419,7 @@
         },
         {
             "position": "D",
-            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11082021/6367.png",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10272022/6367.png",
             "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/26039217919_d14b76.jpg",
             "player": "Aaron Ekblad",
             "points": "0.60",
