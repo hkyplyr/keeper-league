@@ -102,7 +102,7 @@
         },
         {
             "rank": 11,
-            "team": "Kyle'sKillerLemonade",
+            "team": "JockeyMind",
             "record": "(0-1)",
             "all_play": "(1-10)",
             "points_for": "125.05",
@@ -264,7 +264,7 @@
         },
         {
             "rank": 11,
-            "team": "Kyle'sKillerLemonade",
+            "team": "JockeyMind",
             "result": "L",
             "points": "125.05",
             "top_player": "Matt Boldy (15.80)",
@@ -329,8 +329,8 @@
         },
         {
             "label": "Worst Coach",
-            "value": "Kyle'sKillerLemonade (78.1%)",
-            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_2_k.png"
+            "value": "JockeyMind (78.1%)",
+            "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/7f29177e15808a2be610cebc64e55d62dc59132000babe5ca6afbfc60efd4d89.png"
         }
     ],
     "allStarTeam": [
@@ -438,11 +438,11 @@
         {
             "position": "G",
             "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10112022/3341.png",
-            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_2_k.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/7f29177e15808a2be610cebc64e55d62dc59132000babe5ca6afbfc60efd4d89.png",
             "player": "Marc-Andre Fleury",
             "points": "-5.40",
             "avg_points": "-2.7",
-            "team": "Kyle'sKillerLemonade"
+            "team": "JockeyMind"
         }
     ]
 }
