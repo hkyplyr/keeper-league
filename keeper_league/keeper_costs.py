@@ -2,6 +2,8 @@ from itertools import zip_longest
 from yfantasy_api.api import YahooFantasyApi
 
 import csv
+import json
+import os
 
 api = YahooFantasyApi(6738, "nhl")
 
@@ -110,6 +112,10 @@ def determine_current_draft_picks():
 
 
 if __name__ == "__main__":
+    token_content = json.loads(os.environ.get("TOKEN_FILE"))
+    print(token_content.get("expires_by"))
+
+
     draft_costs = get_draft_costs()
 
     players_by_team = [get_roster(team) for team in teams()]

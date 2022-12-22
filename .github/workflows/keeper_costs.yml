@@ -22,5 +22,6 @@ jobs:
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        TOKEN_FILE: ${{ secrets.TOKEN_FILE }}
       run : |
         python keeper_league/keeper_costs.py
