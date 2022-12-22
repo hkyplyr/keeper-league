@@ -19,5 +19,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Update Keeper Costs
+      env:
+        CLIENT_ID: ${{ env.CLIENT_ID }}
+        CLIENT_SECRET: ${{ env.CLIENT_SECRET }}
       run : |
         python keeper_league/keeper_costs.py
