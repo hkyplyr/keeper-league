@@ -1,12 +1,15 @@
+from base64 import b64encode
+from nacl import encoding, public
 from itertools import zip_longest
 from yfantasy_api.api import YahooFantasyApi
 
 import csv
 import json
 import os
+import requests
 
-if not os.path.exists('.tokens.json'):
-    with open('.tokens.json', 'w') as f:
+if not os.path.exists(".tokens.json"):
+    with open(".tokens.json", "w") as f:
         f.write(os.environ.get("TOKEN_FILE"))
 
 api = YahooFantasyApi(6738, "nhl")
@@ -115,8 +118,47 @@ def determine_current_draft_picks():
     ]
 
 
-if __name__ == "__main__":
+def encrypt_token_data():
+    data = json.dumps(
+        {
+            "access_token": api.access_token,
+            "refresh_token": api.refresh_token,
+            "expires_by": api.expires_by,
+        }
+    )
 
+    public_key = os.environ.get("PUBLIC_KEY")
+    public_key = public.PublicKey(
+        public_key.encode("utf-8") + b"==", encoding.URLSafeBase64Encoder()
+    )
+    sealed_box = public.SealedBox(public_key)
+    encrypted = sealed_box.encrypt(data.encode("utf-8"))
+    return b64encode(encrypted).decode("utf-8")
+
+
+def update_github_tokens():
+    if os.environ.get("SHOULD_UPDATE_TOKENS") != "true":
+        return
+
+    url = (
+        "https://api.github.com/repos/hkyplyr/keeper-league/actions/secrets/TOKEN_FILE"
+    )
+    payload = {
+        "encrypted_value": encrypt_token_data(),
+        "key_id": os.environ.get("PUBLIC_KEY_ID"),
+    }
+
+    access_token = os.environ.get("GH_ACCESS_TOKEN")
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {access_token}",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    requests.put(url, data=json.dumps(payload), headers=headers)
+
+
+if __name__ == "__main__":
 
     draft_costs = get_draft_costs()
 
@@ -132,3 +174,5 @@ if __name__ == "__main__":
             writer.writerow(flattened)
 
         writer.writerows(picks)
+
+    update_github_tokens()
