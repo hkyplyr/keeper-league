@@ -2,7 +2,7 @@ name: Update Keeper Costs
 
 on:
   push:
-    branches: [ test-ci ]
+    branches: [ master ]
 
 jobs:
   build:
