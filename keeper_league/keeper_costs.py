@@ -166,7 +166,7 @@ if __name__ == "__main__":
     rotated_players = zip_longest(*players_by_team, fillvalue=[None, None])
     picks = determine_current_draft_picks()
 
-    with open("keeper-costs.csv", "w") as f:
+    with open("docs/keeper-costs.csv", "w") as f:
         writer = csv.writer(f)
 
         for row in rotated_players:
