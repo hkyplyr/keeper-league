@@ -5,6 +5,9 @@ import csv
 import json
 import os
 
+token_content = json.loads(os.environ.get("TOKEN_FILE"))
+print(token_content.get("expires_by"))
+
 api = YahooFantasyApi(6738, "nhl")
 
 ordinal = lambda n: "%d%s" % (
@@ -112,8 +115,6 @@ def determine_current_draft_picks():
 
 
 if __name__ == "__main__":
-    token_content = json.loads(os.environ.get("TOKEN_FILE"))
-    print(token_content.get("expires_by"))
 
 
     draft_costs = get_draft_costs()
