@@ -5,8 +5,9 @@ import csv
 import json
 import os
 
-token_content = json.loads(os.environ.get("TOKEN_FILE"))
-print(token_content.get("expires_by"))
+if not os.path.exists('.tokens.json'):
+    with open('.tokens.json', 'w') as f:
+        f.write(os.environ.get("TOKEN_FILE"))
 
 api = YahooFantasyApi(6738, "nhl")
 
