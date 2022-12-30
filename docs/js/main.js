@@ -1,5 +1,5 @@
 async function initialLoad() {
-    var week = get_week(10);
+    var week = get_week(11);
     loadPage(week);
 }
 
