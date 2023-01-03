@@ -1,16 +1,12 @@
+import sys
 from datetime import datetime, timedelta
-from models import (
-    Player,
-    Matchup,
-    OptimalPoints,
-    WeeklyResult,
-    Team,
-    db_session,
-)
-from yfantasy_api.api import YahooFantasyApi
+
+from database import Database
+from models import Matchup, OptimalPoints, Player, Team, WeeklyResult, db_session
 from sqlalchemy import func
 from tools import GetOptimalPoints
 from update_all_play import update_all_play
+from yfantasy_api.api import YahooFantasyApi
 
 
 def get_sorted_players(session, api, team_id, week, day):
@@ -68,68 +64,95 @@ def inclusive_range(start, end):
     return range(start, end + 1)
 
 
-for i in inclusive_range(get_last_updated_week(), week):
-    matchups = api.league().scoreboard(week=i).get().matchups
+def get_updated_data(week):
 
-    for matchup in matchups:
-        winner = Team(
-            id=matchup.winning_team.id,
-            name=matchup.winning_team.name,
-            image_url=matchup.winning_team.team_logos,
-        )
+    for i in inclusive_range(get_last_updated_week(), week):
+        matchups = api.league().scoreboard(week=i).get().matchups
 
-        loser = Team(
-            id=matchup.losing_team.id,
-            name=matchup.losing_team.name,
-            image_url=matchup.losing_team.team_logos,
-        )
-
-        session.merge(winner)
-        session.merge(loser)
-
-        session.merge(
-            WeeklyResult(
-                team_id=matchup.winning_team.id,
-                week=i,
-                winner=True,
-                points_for=matchup.winning_team.points,
-                projected_points_for=matchup.winning_team.projected_points,
+        for matchup in matchups:
+            winner = Team(
+                id=matchup.winning_team.id,
+                name=matchup.winning_team.name,
+                image_url=matchup.winning_team.team_logos,
             )
-        )
 
-        session.merge(
-            WeeklyResult(
-                team_id=matchup.losing_team.id,
-                week=i,
-                winner=False,
-                points_for=matchup.losing_team.points,
-                projected_points_for=matchup.losing_team.projected_points,
+            loser = Team(
+                id=matchup.losing_team.id,
+                name=matchup.losing_team.name,
+                image_url=matchup.losing_team.team_logos,
             )
-        )
 
-        session.merge(
-            Matchup(
-                winner_id=matchup.winning_team.id,
-                loser_id=matchup.losing_team.id,
-                week=i,
-                victory_margin=float(matchup.winning_team.points)
-                - float(matchup.losing_team.points),
+            session.merge(winner)
+            session.merge(loser)
+
+            session.merge(
+                WeeklyResult(
+                    team_id=matchup.winning_team.id,
+                    week=i,
+                    winner=True,
+                    points_for=matchup.winning_team.points,
+                    projected_points_for=matchup.winning_team.projected_points,
+                )
             )
-        )
+
+            session.merge(
+                WeeklyResult(
+                    team_id=matchup.losing_team.id,
+                    week=i,
+                    winner=False,
+                    points_for=matchup.losing_team.points,
+                    projected_points_for=matchup.losing_team.projected_points,
+                )
+            )
+
+            session.merge(
+                Matchup(
+                    winner_id=matchup.winning_team.id,
+                    loser_id=matchup.losing_team.id,
+                    week=i,
+                    victory_margin=float(matchup.winning_team.points)
+                    - float(matchup.losing_team.points),
+                )
+            )
+
+            session.commit()
+
+        teams = api.league().teams().get().teams
+        for day in game_ranges.get(i):
+            for team in teams:
+                print(f"Getting players for {team.name} on {day}")
+                players = get_sorted_players(session, api, team.id, i, day)
+                optimal_points = GetOptimalPoints.get_optimal_points(players)
+
+                session.merge(
+                    OptimalPoints(
+                        team_id=team.id, week=i, date=day, points=optimal_points
+                    )
+                )
 
         session.commit()
 
-    teams = api.league().teams().get().teams
-    for day in game_ranges.get(i):
-        for team in teams:
-            print(f"Getting players for {team.name} on {day}")
-            players = get_sorted_players(session, api, team.id, i, day)
-            optimal_points = GetOptimalPoints.get_optimal_points(players)
+        update_all_play(i)
 
-            session.merge(
-                OptimalPoints(team_id=team.id, week=i, date=day, points=optimal_points)
-            )
 
-    session.commit()
+db = Database()
 
-    update_all_play(i)
+
+def get_week():
+    if len(sys.argv) == 1:
+        print("Must provide week")
+        exit()
+
+    week = int(sys.argv[1])
+    last_updated_week = db.get_last_updated_week()
+    if week <= 0 or week > last_updated_week:
+        print("Provided week is invalid")
+        exit()
+
+    return week
+
+
+if __name__ == "__main__":
+    week = get_week()
+
+    get_updated_data(week)

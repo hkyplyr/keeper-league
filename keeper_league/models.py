@@ -1,8 +1,13 @@
-from sqlalchemy import create_engine
-from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String
-from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy.orm import Session
-
+from sqlalchemy import (
+    Boolean,
+    Column,
+    Float,
+    ForeignKey,
+    Integer,
+    String,
+    create_engine,
+)
+from sqlalchemy.orm import Session, declarative_base, relationship
 
 Base = declarative_base()
 
