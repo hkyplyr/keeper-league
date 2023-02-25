@@ -1,7 +1,7 @@
+from models import (AllPlay, OptimalPoints, Player, Team, WeeklyResult,
+                    db_session)
+from sqlalchemy import Integer, and_, func, not_
 from tools import Formatting
-from models import Player, Team, WeeklyResult, OptimalPoints, AllPlay, db_session
-from sqlalchemy import func
-from sqlalchemy import Integer, and_, not_
 
 session = db_session()
 

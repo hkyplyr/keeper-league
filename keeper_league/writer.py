@@ -1,8 +1,9 @@
 import json
 import os
 import sys
-from queries import Awards, PowerRankings, Standings, Teams
+
 from database import Database
+from queries import Awards, PowerRankings, Standings, Teams
 
 colors = {
     1: "bg-gray-500",

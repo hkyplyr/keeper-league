@@ -1,16 +1,11 @@
 from datetime import datetime, timedelta
-from models import (
-    Player,
-    Matchup,
-    OptimalPoints,
-    WeeklyResult,
-    Team,
-    db_session,
-)
-from yfantasy_api.api import YahooFantasyApi
+
+from models import (Matchup, OptimalPoints, Player, Team, WeeklyResult,
+                    db_session)
 from sqlalchemy import func
 from tools import GetOptimalPoints
 from update_all_play import update_all_play
+from yfantasy_api.api import YahooFantasyApi
 
 
 def get_sorted_players(session, api, team_id, week, day):

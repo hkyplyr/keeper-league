@@ -1,12 +1,12 @@
-from base64 import b64encode
-from nacl import encoding, public
-from itertools import zip_longest
-from yfantasy_api.api import YahooFantasyApi
-
 import csv
 import json
 import os
+from base64 import b64encode
+from itertools import zip_longest
+
 import requests
+from nacl import encoding, public
+from yfantasy_api.api import YahooFantasyApi
 
 if not os.path.exists(".tokens.json"):
     with open(".tokens.json", "w") as f:

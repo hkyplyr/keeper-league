@@ -1,4 +1,4 @@
-from models import db_session, Player
+from models import Player, db_session
 from sqlalchemy import func
 
 

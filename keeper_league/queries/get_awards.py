@@ -1,10 +1,4 @@
-from models import (
-    Team,
-    Matchup,
-    WeeklyResult,
-    OptimalPoints,
-    db_session,
-)
+from models import Matchup, OptimalPoints, Team, WeeklyResult, db_session
 from sqlalchemy import and_, func, literal
 from tools import Formatting
 
