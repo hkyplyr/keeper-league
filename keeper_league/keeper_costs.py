@@ -12,7 +12,7 @@ if not os.path.exists(".tokens.json"):
     with open(".tokens.json", "w") as f:
         f.write(os.environ.get("TOKEN_FILE"))
 
-api = YahooFantasyApi(6738, "nhl")
+api = YahooFantasyApi(65227, "nhl")
 
 ordinal = lambda n: "%d%s" % (
     n,
