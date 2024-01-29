@@ -1,0 +1,448 @@
+{
+    "standings": [
+        {
+            "rank": 1,
+            "team": "HockeyMind",
+            "record": "(12-1)",
+            "all_play": "(130-12)",
+            "points_for": "2900.20",
+            "optimal_points_for": "3158.30",
+            "coach_percentage": "91.8",
+            "luck_percentage": "0.8"
+        },
+        {
+            "rank": 2,
+            "team": "Captain Shattnerkirk",
+            "record": "(10-3)",
+            "all_play": "(76-67)",
+            "points_for": "2350.40",
+            "optimal_points_for": "2658.30",
+            "coach_percentage": "88.4",
+            "luck_percentage": "23.8"
+        },
+        {
+            "rank": 3,
+            "team": "Teenage Mutant Ninja Hertls",
+            "record": "(9-4)",
+            "all_play": "(91-52)",
+            "points_for": "2446.00",
+            "optimal_points_for": "2706.40",
+            "coach_percentage": "90.4",
+            "luck_percentage": "5.6"
+        },
+        {
+            "rank": 4,
+            "team": "ImPasta",
+            "record": "(8-5)",
+            "all_play": "(99-44)",
+            "points_for": "2574.85",
+            "optimal_points_for": "2782.80",
+            "coach_percentage": "92.5",
+            "luck_percentage": "-7.7"
+        },
+        {
+            "rank": 5,
+            "team": "Suck and Blow",
+            "record": "(8-5)",
+            "all_play": "(84-59)",
+            "points_for": "2463.65",
+            "optimal_points_for": "2664.95",
+            "coach_percentage": "92.4",
+            "luck_percentage": "2.8"
+        },
+        {
+            "rank": 6,
+            "team": "Young Guns",
+            "record": "(6-7)",
+            "all_play": "(93-49)",
+            "points_for": "2538.30",
+            "optimal_points_for": "2763.30",
+            "coach_percentage": "91.9",
+            "luck_percentage": "-19.3"
+        },
+        {
+            "rank": 7,
+            "team": "Moany & Groany",
+            "record": "(6-7)",
+            "all_play": "(62-81)",
+            "points_for": "2213.90",
+            "optimal_points_for": "2470.80",
+            "coach_percentage": "89.6",
+            "luck_percentage": "2.8"
+        },
+        {
+            "rank": 8,
+            "team": "Kyle sux dalescoq",
+            "record": "(5-8)",
+            "all_play": "(59-84)",
+            "points_for": "2198.25",
+            "optimal_points_for": "2431.60",
+            "coach_percentage": "90.4",
+            "luck_percentage": "-2.8"
+        },
+        {
+            "rank": 9,
+            "team": "JockeyMind",
+            "record": "(5-8)",
+            "all_play": "(49-94)",
+            "points_for": "2089.50",
+            "optimal_points_for": "2296.55",
+            "coach_percentage": "91.0",
+            "luck_percentage": "4.2"
+        },
+        {
+            "rank": 10,
+            "team": "Tatar Sauce",
+            "record": "(3-10)",
+            "all_play": "(43-100)",
+            "points_for": "2085.50",
+            "optimal_points_for": "2410.75",
+            "coach_percentage": "86.5",
+            "luck_percentage": "-7.0"
+        },
+        {
+            "rank": 11,
+            "team": "My team sucks trade me",
+            "record": "(3-10)",
+            "all_play": "(38-105)",
+            "points_for": "2060.65",
+            "optimal_points_for": "2215.75",
+            "coach_percentage": "93.0",
+            "luck_percentage": "-3.5"
+        },
+        {
+            "rank": 12,
+            "team": "Slap Shot",
+            "record": "(3-10)",
+            "all_play": "(33-110)",
+            "points_for": "1884.50",
+            "optimal_points_for": "2138.05",
+            "coach_percentage": "88.1",
+            "luck_percentage": "0.0"
+        }
+    ],
+    "powerRankings": [
+        {
+            "rank": 1,
+            "team": "HockeyMind",
+            "result": "W",
+            "points": "205.05",
+            "top_player": "Carter Verhaeghe (26.70)",
+            "weekly_coach_percentage": "80.4",
+            "total_points": "2900.20",
+            "yearly_coach_percentage": "91.8",
+            "movement": 0,
+            "team_id": 3,
+            "color": "bg-blue-500",
+            "writeup": ""
+        },
+        {
+            "rank": 2,
+            "team": "ImPasta",
+            "result": "W",
+            "points": "214.55",
+            "top_player": "William Nylander (26.95)",
+            "weekly_coach_percentage": "93.9",
+            "total_points": "2574.85",
+            "yearly_coach_percentage": "92.5",
+            "movement": 1,
+            "team_id": 5,
+            "color": "bg-pink-500",
+            "writeup": ""
+        },
+        {
+            "rank": 3,
+            "team": "Young Guns",
+            "result": "L",
+            "points": "165.25",
+            "top_player": "Connor McDavid (21.00)",
+            "weekly_coach_percentage": "94.2",
+            "total_points": "2538.30",
+            "yearly_coach_percentage": "91.9",
+            "movement": -1,
+            "team_id": 6,
+            "color": "bg-red-500",
+            "writeup": ""
+        },
+        {
+            "rank": 4,
+            "team": "Teenage Mutant Ninja Hertls",
+            "result": "W",
+            "points": "167.75",
+            "top_player": "Travis Konecny (24.10)",
+            "weekly_coach_percentage": "94.7",
+            "total_points": "2446.00",
+            "yearly_coach_percentage": "90.4",
+            "movement": 0,
+            "team_id": 1,
+            "color": "bg-gray-500",
+            "writeup": ""
+        },
+        {
+            "rank": 5,
+            "team": "Suck and Blow",
+            "result": "L",
+            "points": "192.30",
+            "top_player": "Nathan MacKinnon (29.60)",
+            "weekly_coach_percentage": "84.7",
+            "total_points": "2463.65",
+            "yearly_coach_percentage": "92.4",
+            "movement": 0,
+            "team_id": 10,
+            "color": "bg-yellow-500",
+            "writeup": ""
+        },
+        {
+            "rank": 6,
+            "team": "Captain Shattnerkirk",
+            "result": "W",
+            "points": "221.00",
+            "top_player": "Martin Jones (29.20)",
+            "weekly_coach_percentage": "97.9",
+            "total_points": "2350.40",
+            "yearly_coach_percentage": "88.4",
+            "movement": 0,
+            "team_id": 2,
+            "color": "bg-green-500",
+            "writeup": ""
+        },
+        {
+            "rank": 7,
+            "team": "Moany & Groany",
+            "result": "L",
+            "points": "170.70",
+            "top_player": "Nikita Kucherov (23.50)",
+            "weekly_coach_percentage": "88.6",
+            "total_points": "2213.90",
+            "yearly_coach_percentage": "89.6",
+            "movement": 1,
+            "team_id": 9,
+            "color": "bg-indigo-500",
+            "writeup": ""
+        },
+        {
+            "rank": 8,
+            "team": "Kyle sux dalescoq",
+            "result": "L",
+            "points": "110.45",
+            "top_player": "Nazem Kadri (18.35)",
+            "weekly_coach_percentage": "78.6",
+            "total_points": "2198.25",
+            "yearly_coach_percentage": "90.4",
+            "movement": -1,
+            "team_id": 7,
+            "color": "bg-purple-500",
+            "writeup": ""
+        },
+        {
+            "rank": 9,
+            "team": "JockeyMind",
+            "result": "W",
+            "points": "215.00",
+            "top_player": "Zach Hyman (26.45)",
+            "weekly_coach_percentage": "92.6",
+            "total_points": "2089.50",
+            "yearly_coach_percentage": "91.0",
+            "movement": 0,
+            "team_id": 8,
+            "color": "bg-fuchsia-500",
+            "writeup": ""
+        },
+        {
+            "rank": 10,
+            "team": "Tatar Sauce",
+            "result": "W",
+            "points": "169.10",
+            "top_player": "Sidney Crosby (20.55)",
+            "weekly_coach_percentage": "79.0",
+            "total_points": "2085.50",
+            "yearly_coach_percentage": "86.5",
+            "movement": 0,
+            "team_id": 12,
+            "color": "bg-teal-500",
+            "writeup": ""
+        },
+        {
+            "rank": 11,
+            "team": "My team sucks trade me",
+            "result": "L",
+            "points": "126.30",
+            "top_player": "MacKenzie Weegar (19.90)",
+            "weekly_coach_percentage": "87.2",
+            "total_points": "2060.65",
+            "yearly_coach_percentage": "93.0",
+            "movement": 0,
+            "team_id": 4,
+            "color": "bg-violet-500",
+            "writeup": ""
+        },
+        {
+            "rank": 12,
+            "team": "Slap Shot",
+            "result": "L",
+            "points": "157.10",
+            "top_player": "Matthew Tkachuk (30.25)",
+            "weekly_coach_percentage": "87.4",
+            "total_points": "1884.50",
+            "yearly_coach_percentage": "88.1",
+            "movement": 0,
+            "team_id": 11,
+            "color": "bg-orange-500",
+            "writeup": ""
+        }
+    ],
+    "awards": [
+        {
+            "label": "Highest Scorer",
+            "value": "Captain Shattnerkirk (221.00)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png"
+        },
+        {
+            "label": "Biggest Blowout",
+            "value": "JockeyMind (104.55)",
+            "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/7f29177e15808a2be610cebc64e55d62dc59132000babe5ca6afbfc60efd4d89.png"
+        },
+        {
+            "label": "Overacheiving Team",
+            "value": "JockeyMind (129.0%)",
+            "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/7f29177e15808a2be610cebc64e55d62dc59132000babe5ca6afbfc60efd4d89.png"
+        },
+        {
+            "label": "Best Coach",
+            "value": "Captain Shattnerkirk (97.9%)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png"
+        },
+        {
+            "label": "Lowest Scorer",
+            "value": "Kyle sux dalescoq (110.45)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png"
+        },
+        {
+            "label": "Closest Victory",
+            "value": "Tatar Sauce (3.85)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_8.png"
+        },
+        {
+            "label": "Underacheiving Team",
+            "value": "Kyle sux dalescoq (73.5%)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png"
+        },
+        {
+            "label": "Worst Coach",
+            "value": "Kyle sux dalescoq (78.6%)",
+            "image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_1_p.png"
+        }
+    ],
+    "allStarTeam": [
+        {
+            "position": "C",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11072023/5980.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25323121205_f791e0dec2.jpg",
+            "player": "Nathan MacKinnon",
+            "points": "29.60",
+            "avg_points": "9.9",
+            "team": "Suck and Blow"
+        },
+        {
+            "position": "LW",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10302023/7114.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/26039217919_d14b76.jpg",
+            "player": "Matthew Tkachuk",
+            "points": "30.25",
+            "avg_points": "10.1",
+            "team": "Slap Shot"
+        },
+        {
+            "position": "RW",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11272023/6368.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/26039217919_d14b76.jpg",
+            "player": "Sam Reinhart",
+            "points": "28.00",
+            "avg_points": "9.3",
+            "team": "Slap Shot"
+        },
+        {
+            "position": "D",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11072023/7519.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f74089057a90c73ec36b988114b2b8bbab1d6b579de9803a867174741c9bed37.png",
+            "player": "Cale Makar",
+            "points": "23.95",
+            "avg_points": "8.0",
+            "team": "ImPasta"
+        },
+        {
+            "position": "D",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10082023/6184.png",
+            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_12.png",
+            "player": "MacKenzie Weegar",
+            "points": "19.90",
+            "avg_points": "5.0",
+            "team": "My team sucks trade me"
+        },
+        {
+            "position": "G",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10262023/4581.png",
+            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png",
+            "player": "Martin Jones",
+            "points": "29.20",
+            "avg_points": "9.7",
+            "team": "Captain Shattnerkirk"
+        }
+    ],
+    "allBustTeam": [
+        {
+            "position": "C",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11062023/7111.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25323121205_f791e0dec2.jpg",
+            "player": "Pierre-Luc Dubois",
+            "points": "0.00",
+            "avg_points": "0.0",
+            "team": "Suck and Blow"
+        },
+        {
+            "position": "LW",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10112023/5698.png",
+            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_8.png",
+            "player": "Teuvo Teravainen",
+            "points": "0.00",
+            "avg_points": "0.0",
+            "team": "Tatar Sauce"
+        },
+        {
+            "position": "RW",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10102022/4002.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/f8392d8b1cd13a7722fe1afd13eee88aaa9ede8714ef5e613689036f105dd800.jpg",
+            "player": "Claude Giroux",
+            "points": "0.55",
+            "avg_points": "0.3",
+            "team": "Young Guns"
+        },
+        {
+            "position": "D",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10102023/6385.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/26039217919_d14b76.jpg",
+            "player": "Tony DeAngelo",
+            "points": "0.00",
+            "avg_points": "0.0",
+            "team": "Slap Shot"
+        },
+        {
+            "position": "D",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/11272023/8884.png",
+            "team_image": "https://s.yimg.com/cv/apiv2/default/nhl/nhl_4.png",
+            "player": "Brandt Clarke",
+            "points": "0.55",
+            "avg_points": "0.6",
+            "team": "Captain Shattnerkirk"
+        },
+        {
+            "position": "G",
+            "player_image": "https://s.yimg.com/xe/i/us/sp/v/nhl_cutout/players_l/10252023/5057.png",
+            "team_image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/25218775992_1baac11d46.jpg",
+            "player": "Scott Wedgewood",
+            "points": "-5.60",
+            "avg_points": "-2.8",
+            "team": "HockeyMind"
+        }
+    ]
+}
