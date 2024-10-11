@@ -1,11 +1,10 @@
 from datetime import datetime, timedelta
 
-from models import (Matchup, OptimalPoints, Player, Team, WeeklyResult,
-                    db_session)
+from models import Matchup, OptimalPoints, Player, Team, WeeklyResult, db_session
 from sqlalchemy import func
 from tools import GetOptimalPoints
 from update_all_play import update_all_play
-from yfantasy_api.api import YahooFantasyApi
+from yfantasy_api import YahooFantasyApi
 
 
 def get_sorted_players(session, api, team_id, week, day):
@@ -33,8 +32,8 @@ def get_sorted_players(session, api, team_id, week, day):
     return list(players)
 
 
-week = 16
-api = YahooFantasyApi(65227, "nhl", timeout=1)
+week = 1
+api = YahooFantasyApi(3175, "nhl", timeout=1)
 session = db_session()
 
 
@@ -67,6 +66,9 @@ for i in inclusive_range(get_last_updated_week(), week):
     matchups = api.league().scoreboard(week=i).get().matchups
 
     for matchup in matchups:
+        if matchup.status != "postevent":
+            continue
+
         winner = Team(
             id=matchup.winning_team.id,
             name=matchup.winning_team.name,

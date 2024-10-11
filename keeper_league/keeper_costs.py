@@ -6,13 +6,13 @@ from itertools import zip_longest
 
 import requests
 from nacl import encoding, public
-from yfantasy_api.api import YahooFantasyApi
+from yfantasy_api import YahooFantasyApi
 
 if not os.path.exists(".tokens.json") and os.environ.get("TOKEN_FILE"):
     with open(".tokens.json", "w") as f:
         f.write(os.environ.get("TOKEN_FILE"))
 
-api = YahooFantasyApi(65227, "nhl")
+api = YahooFantasyApi(3175, "nhl")
 
 ordinal = lambda n: "%d%s" % (
     n,
